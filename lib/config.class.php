@@ -2,9 +2,9 @@
 class Config{
     
     public static $conf = array(
-        'db.host' => '80.240.19.192',
+        'db.host' => '',
         'db.login' => 'shtab',
-        'db.password' => 'jmb7EekxAVByTRpxZ6',
+        'db.password' => '',
         'db.name' => 'shtab',
     );
     public static $db;
