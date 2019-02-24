@@ -1,0 +1,97 @@
+<section class="about">
+    <h2 class="title title--about">
+        ПРО НАС        
+    </h2>
+    <div class="about__container">
+        <article>
+            <p><strong>Антикорупційний штаб</strong> – це громадська організація, створена влітку 2014 року. Ми ставимо собі за мету виявлення корупційних схем, розкрадань бюджету і ресурсів громади та інших корупційних порушень можновладців з метою притягнення їх до відповідальності.</p>
+            <p>Наша команда вірить, що головною передумовою зменшення корупції в Україні – є нульова терпимість корупції серед тотальної більшості населення. Тому наш принцип – максимальне залучення людей до антикорупційного руху. Ми вважаємо внесок кожної людини в боротьбу з корупцією безцінним. <strong><a href="#">Дізнайтесь як стати волонтером Антикорупційного штабу.</a></strong></p>
+            <p>З 2016 року організація розпочала створення регіональних антикорупційних штабів як доповнення до державної політики децентралізації. В цьому році ми плануємо відкрити щонайменше 5 регіональних штабів в різних регіонах України. Щоб ініціювати створення антикорупційного штабу у вашому регіоні, будь ласка, <strong><a href="#">сконтактуйте з нами.</a></strong></p>
+        </article>
+        <div class="about__image"><img class="img--about" src="img/about_img.png" alt=""></div>
+    </div>
+</section>
+<section class="members">
+    <h2 class="title title--about title--about-members">
+        КОМАНДА         
+    </h2>
+    <div class="members__container">
+            <?php foreach($data['members_rows'] as $member_info){ ?>
+        <div class="member">
+            <div class="member__photo">
+                <img src="img/members_photo/<?=$member_info['img']?>" alt="">
+            </div>
+            <div class="member__info">
+                <p>
+                    <?=$member_info['name']?>
+                </p>
+                <p>
+                    <?=$member_info['surname']?>
+                </p>
+                <small>
+                    <?=$member_info['position']?>          
+                </small>
+                <div class="social-icons">
+                    <a href="<?=$member_info['facebook_link']?>" class="social-icons__item social-icons__item--facebook"></a>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
+    </div>
+    <section class="btn-box btn-box--support">
+        <h3 class="title title--btn-box-support">
+            БАЖАЄШ ПІДТРИМАТИ КОМАНДУ АНТИКОРУПЦІЙНОГО ШТАБУ?        
+        </h3>
+        <a href="/shtab.php-academy.org/join_us" class="btn btn--btn-box-support">
+            ПІДТРИМАТИ        
+        </a>
+    </section>
+</section>
+<section class="volunteers">
+    <h2 class="title title--about title--about-volunteers">
+        ВОЛОНТЕРИ        
+    </h2>
+    <div class="volunteers__container">
+        <?php foreach($data['volunteers_rows'] as $volunteer_info){ ?>
+        <div class="volunteer">
+            <img class="volunteer__photo" src="img/volunteers_photo/<?=$volunteer_info['img']?>" alt="">
+            <p class="volunteer__info">
+                <span>
+                    <?=$volunteer_info['name']?>       
+                </span>
+                <span>
+                    <?=$volunteer_info['surname']?>          
+                </span>
+            </p>
+        </div>
+        <?php } ?>
+    </div>
+</section>
+<section class="btn-box btn-box--join">
+    <h3 class="title title--btn-box-join">
+        ХОЧЕШ СТАТИ ЧАСТИНОЮ КОМАНДИ?        
+    </h3>
+    <a href="/shtab.php-academy.org/join_us" class="btn btn--btn-box-join">
+        ДОЛУЧИТИСЬ        
+    </a>
+</section>
+<section class="news-individual">
+    <h3 class="title title--about title--about-cells title--about-cells-news">
+        НОВИНИ
+    </h3>
+</section>
+<section id="news_content" class="news-blocks news-blocks--individual">
+    <div class="news-blocks__container newsContainer">
+            <?php foreach($data['news_rows'] as $news_publication){ ?>
+        <article class="news-item" id="post-" .="">
+            <img class="news-item__photo" src="img/news_images/<?=$news_publication['img']?>" alt="">
+            <div class="news-item__container">
+                <div class="news-item__date"><?=$news_publication['post_date']?></div>
+                <h4 class="news-item__title"><?=$news_publication['h1']?></h4>
+                <p class="news-item__info"><?=$news_publication['short_content']?></p>
+                <a class="news-item__details" href="/shtab.php-academy.org/news/view/<?=$news_publication['id']?>">Детальніше</a>
+            </div>
+        </article>
+        <?php } ?>
+    </div>
+</section>

@@ -1,0 +1,29 @@
+<?php
+
+$rows = $_SESSION['rows'];
+$search_result_par = $_SESSION['search_result_par'];?>
+<section class="news-individual">  
+    <h3 class="title title--about title--about-cells title--about-cells-news">
+        Пошук
+    </h3>
+</section>
+<section class="news-blocks news-blocks--individual">
+    <p class="search-paragraph"><?=$search_result_par?></p>
+    <div class="news-blocks__container newsContainer">
+        <?php
+        foreach ($rows as $item) {?>
+        <article class="news-item" id="post-" .="">
+            <img class="news-item__photo" src="<?=$item['img']?>" alt="">
+            <div class="news-item__container">
+                <div class="news-item__date"><?=$item['post_date']?></div>
+                <h4 class="news-item__title"><?=$item['h1']?></h4>
+                <p class="news-item__info"><?=$item['content']?></p>
+                <a class="news-item__details" href="#">Детальніше</a>
+            </div>
+        </article>
+        <?php  
+        }?>
+    </div>
+</section>
+
+

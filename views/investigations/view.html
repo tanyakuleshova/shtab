@@ -1,0 +1,45 @@
+<section class="news-inner news-inner--investigation">
+    <div class="news-inner__head">
+        <small class="news-inner__category">
+            Розслідування
+        </small>
+        <span class="news-inner__date"><?=$data['individual_rows']['post_date']?></span>
+        <p class="news-inner__region"></p>
+    </div>
+    <article class="news-article news-article--investigation">
+        <div class="news-article__container">
+            <header class="news-article__title"><?=$data['individual_rows']['h1']?></header>
+            <p class="news-article__main-paragraph"><em>
+                    <?=$data['individual_rows']['content']?></em></p>
+        </div>
+            <figure class="news-article__photo">
+                <img src="../../img/investigation_images/<?=$individual_rows['img']?>" alt="">
+                <figcaption><span class="strong">Джерело:</span><?=$data['individual_rows']['source']?></figcaption>
+            </figure>
+    </article>
+</section>
+<section class="news-individual news-individual--investigation">
+    <h3 class="title title--about title--about-cells title--about-cells-investigation">
+        РОЗСЛІДУВАННЯ
+    </h3>
+</section>
+<section class="news-blocks news-blocks--individual">
+    <div class="news-blocks__container investigationContainer">
+        <?php foreach($data['rows'] as $investigations_publication){ ?>
+            <article class="news-item" id="post-" .="">
+                <img class="news-item__photo" src="../../img/investigation_images/<?=$investigations_publication['img']?>" alt="">
+                <div class="news-item__container">
+                    <div class="news-item__date"><?=$investigations_publication['post_date']?></div>
+                    <h4 class="news-item__title"><?=$investigations_publication['h1']?></h4>
+                    <p class="news-item__info"><?=$investigations_publication['short-content']?></p>
+                    <a href="/shtab.php-academy.org/investigations/view/<?=$investigations_publication['id']?>" class="news-item__details">Детальніше</a>
+                </div>
+            </article>
+        <?php } ?>
+    </div>
+    <div class="load-more load-more--investigation">
+        <span class="load-more__button load-more-js"">
+        БІЛЬШЕ РОЗСЛІДУВАНЬ
+        </span>
+    </div>
+</section>

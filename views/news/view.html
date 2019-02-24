@@ -1,0 +1,51 @@
+<section class="news-inner">
+
+    <div class="news-inner__head">
+        <small class="news-inner__category">
+            Новини
+        </small>
+        <span class="news-inner__date"><?=$data['individual_rows']['post_date']?></span>
+        <p class="news-inner__region"></p>
+    </div>
+    <article class="news-article">
+        <div class="news-article__container">
+            <header class="news-article__title"><?=$data['individual_rows']['h1']?></header>
+            <p><?=$data['individual_rows']['content']?>&nbsp;</p>
+            <br>
+            <br>
+        </div>
+
+        <figure class="news-article__photo">
+            <img src="../../img/news_images/<?=$data['individual_rows']['img']?>" alt="">
+            <figcaption>
+                <span class="strong">Джерело:</span><?=$data['individual_rows']['source']?>
+            </figcaption>
+        </figure>
+    </article>
+</section>
+<section class="news-individual">
+    <h3 class="title title--about title--about-cells title--about-cells-news">
+        НОВИНИ
+    </h3>
+</section>
+<section id="news_content" class="news-blocks news-blocks--individual">
+    <div class="news-blocks__container newsContainer">
+        <?php foreach($data['rows'] as $news_publication){ ?>
+            <article class="news-item" id="post-" .="">
+                <img class="news-item__photo" src="../../img/news_images/<?=$news_publication['img']?>" alt="">
+                <div class="news-item__container">
+                    <div class="news-item__date"><?=$news_publication['post_date']?></div>
+                    <h4 class="news-item__title"><?=$news_publication['h1']?></h4>
+                    <p class="news-item__info"><?=$news_publication['short_content']?></p>
+                    <a class="news-item__details" href="/shtab.php-academy.org/news/view/<?=$news_publication['id']?>">Детальніше</a>
+                </div>
+            </article>
+        <?php } ?>
+    </div>
+
+    <!--    <div class="load-more">-->
+    <form action="post">
+        <input name="load" id="show_more" count_show="6" count_add="3" type="button" value="Показать еще"/>
+    </form>
+    <!--    </div>-->
+</section>

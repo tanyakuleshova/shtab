@@ -1,0 +1,166 @@
+<section class="help">
+    <h1 class="title title--help">ЯК ДОПОМОГТИ АНТИКОРУПЦІЙНОМУ ШТАБУ?</h1>
+
+    <div class="tabs tabs--help">
+
+        <ul class="tabs__container">
+            <li class="tabs__link tabs__link--current" data-tab="tab-1">ПІДТРИМАТИ</li>
+            <li class="tabs__link" data-tab="tab-2">ПРИЄДНАТИСЬ</li>
+            <li class="tabs__link" data-tab="tab-3">ЗДАТИ<br>КОРУПЦІОНЕРА</li>
+            <li class="tabs__link" data-tab="tab-4">ПІДПИСАТИСЬ<br>НА РОЗСИЛКУ</li>
+        </ul>
+
+        
+<div id="tab-1" class="tabs__item tabs__item--current">
+<div class="tab tab--first">
+    <h3 class="title title--tab title--tab-donate">ПІДТРИМАТИ АНТИКОРУПЦІЙНИЙ ШТАБ</h3>
+    
+    <p class="tab__description">Ми закликаємо всіх, хто втомився від корупції і брехні підтримати Антикорупційний штаб. Кожна копійка на підтримку боротьби з корупцією — це інвестиція в майбутнє, яка дозволить заощадити мільйони.</p>
+
+    <input id='price' type="text" placeholder="Введіть сумму" class="input input--tab"/>
+    <button type="button"  onclick="make_pay();" class="btn btn--tab btn--tab-last">Допомогти</button>
+    <span id='form_responce' style='display:none;'></span>
+
+</div>
+</div>
+        
+<div id="tab-2" class="tabs__item">
+<div class="tab">
+    <h3 class="title title--tab title--tab-join">ПРИЄДНАТИСЬ ДО АНТИКОРУПЦІЙНОГО ШТАБУ</h3>
+    
+    <p class="tab__description">Дякуємо, що бажаєте долучитися до діяльності Антикорупційного штабу!<br> Будь ласка, заповніть форму:</p>
+    
+    <form id="shtabJoinForm" class="tab__form tab__form--second tab__form--two-col" action="" method="POST">
+        <label class="label label--required"><input type="text" id="shtabName" name="joinForm_name" class="joinForm input input--tab" placeholder="Ваше повне ім'я"></label>
+        <label class="label label--required"><input type="text" id="shtabRegion" name="joinForm_region" class="joinForm input input--tab" placeholder="Населений пункт, область"></label>
+
+        <label class="label label--required"><input type="text" id="shtabPhone" name="joinForm_phone" class="joinForm input input--tab" placeholder="Ваш телефон"></label>
+
+        <fieldset class="radio radio--help">
+            <legend class="radio__title">Як бажаєте долучитись до діяльності Штабу?</legend>
+            <ul class="radio__items">
+                <li>
+                    <input type="radio" id="shtabRbHelpType1" name="joinForm__HelpType[]" class="radio__input" value="Стати волонтером" >
+                    <label for="shtabRbHelpType1" class="label radio__label">Стати волонтером</label>
+                </li>
+                <li>
+                    <input type="radio" id="shtabRbHelpType2" name="joinForm__HelpType[]" class="radio__input" value="Допомогти фінансово">
+                    <label for="shtabRbHelpType2" class="label radio__label">Допомогти фінансово</label>
+                </li>
+                <li>
+                    <input type="radio" id="shtabRbHelpType3" name="joinForm__HelpType[]" class="radio__input" value="Створити осередок в своєму населеному пункті">
+                    <label for="shtabRbHelpType3" class="label radio__label">Створити осередок в своєму населеному пункті</label>
+                </li>
+            </ul>
+        </fieldset>
+
+        <label class="label label--required label--email-tab-2">
+            <input type="email" id="shtabEmail" name="joinForm_email" class="joinForm input input--tab" placeholder="Ваш email">
+        </label>
+
+        <label class="label label--social-tab-2">
+            <input type="text" id="shtabSocial" name="joinForm_social_link" class="input input--tab" placeholder="Посилання на ваш профіль в соц. мережах">
+        </label>
+
+        <label class="label label--add-tab-2">
+            <input type="text" id="shtabMisc" name="joinForm_additional_msg" class="input input--tab" placeholder="Бажаєте щось додати?">
+        </label>
+
+        <p class="checkbox checkbox--help">
+            <input id="shtabChkAgree" name="joinForm_Agree" type="checkbox" class="checkbox__input">
+            <label for="shtabChkAgree" class="checkbox__label">Згоден з обробкою персональних даних</label>
+        </p>
+
+        <span class="tab__required">Обов’язкові поля для заповнення</span>
+        <button class="btn btn--tab btn--tab-2">ПОДАТИ ЗАЯВКУ</button>
+    </form>
+    <div class="response_msg_joinForm"></div>
+</div>
+</div>            
+
+        
+<div id="tab-3" class="tabs__item">
+<div class="tab">
+    <h3 class="title title--tab title--tab-corruption">ЗДАТИ КОРУПЦІОНЕРА</h3>
+    
+    <p class="tab__description">Якщо ви стали свідком або випадковим учасником корупційних подій, будь ласка, надішліть інформацію нам. Ми гарантуємо вашу анонімність, проте для можливості отримати додаткові деталі ми просимо вас залишити свої контакти.</p>
+    
+    <p class="tab__description">За можливістю, будь ласка, надайте докази корупції (наприклад: фотокопії документів, відео, фотографії, аудіозаписи тощо). Це пришвидшить розслідування і збільшить шанси на покарання корупціонера.</p>
+    
+    <form action="" method="POST" enctype="multipart/form-data" id="shtabCorruptForm" class="tab__form tab__form--third tab__form--two-col" >
+        <label class="label">
+            <input type="text" id="shtabName" name="corruptionForm_name" class="corruptForm input input--tab" placeholder="Ваше повне ім'я">
+        </label>
+
+        <label class="label label--required">
+            <input type="text" id="shtabRegion" name="corruptionForm_region" class="corruptForm input input--tab" placeholder="Населений пункт, область">
+        </label>
+
+        <label class="label">
+            <input type="text" id="shtabPhone" name="corruptionForm_phone" class="corruptForm input input--tab" placeholder="Ваш телефон">
+        </label>
+
+        <label class="label label--required">
+            <input type="text" id="shtabSituation" name="corruptionForm_situation" class="corruptForm input input--tab" placeholder="Детальний опис корупційної ситуації">
+        </label>
+
+        <label class="label label--required">
+            <input type="email" id="shtabEmail" name="corruptionForm_email" class="corruptForm input input--tab" placeholder="Ваш email">
+        </label>
+
+        <label class="label">
+            <input type="text" id="shtabArguments" name="corruptionForm_arguments" class="corruptForm input input--tab" placeholder="Опис наявних у вас доказів">
+        </label>
+
+        <label class="label label--required">
+            <input type="text" id="shtabCorruptName" name="corruptionForm_corruptName" class="corruptForm input input--tab" placeholder="Прізвище, ім'я, по-батькові, посада корупціонера">
+        </label>
+        
+        <input type="text" class="input input--tab" placeholder="Прикріпити докази" disabled="">
+        <input id="sortpicture" type="file" name="file" />
+
+
+        <p class="checkbox checkbox--help">
+            <input id="chkGuarantee" name="shtab_guarantee" type="checkbox" class="checkbox__input">
+            <label for="chkGuarantee" class="checkbox__label">Я гарантую правдивість наданої інформації</label>
+        </p>
+        
+        <span class="tab__required">Обов’язкові поля для заповнення</span>
+
+        <button class="btn btn--tab btn--tab-3">ПОДАТИ ЗАЯВКУ</button>
+    </form>
+    <div class="response_msg_corruptionForm"></div>
+</div>
+</div> 
+
+        
+<div id="tab-4" class="tabs__item">
+<div class="tab">
+    <h3 class="title title--tab title--tab-email">ПІДПИСАТИСЬ НА РОЗСИЛКУ</h3>
+    
+    <p class="tab__description">Отримувати інформацію про розслідування, оновлення та останні новини Антикорупційного штабу</p>
+    <form method ="POST" id="contact-form" class="tab__form tab__form--fourth tab__form--one-col" action="">
+        <label class="label"><input type="email" name="subscribe_email" class="input input--tab" placeholder="Ваш email"></label>
+        <label class="label"><input type="text" name="subscribe_name" class="input input--tab" placeholder="Ваше повне ім'я"></label>
+        <input id="submit_form" name="submit" type="submit" value="ПІДПИСАТИСЬ" class="btn btn--tab btn--tab-last">
+    </form>
+    <div class="response_msg_subscribeForm"></div>
+</div>
+</div> 
+
+    </div>
+
+</section>
+<script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+</script>
+    
+
+<script src="lib/js/ajax.subscribe.js"></script>
+<script src="lib/js/ajax.liqpay.js"></script>
+<script src="lib/js/ajax.join_shtab.js"></script>
+<script src="lib/js/ajax.corruption.js"></script>
+<script src="lib/js/shtab.js"></script>
+

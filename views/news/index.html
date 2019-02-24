@@ -1,0 +1,48 @@
+<?php foreach($data['last_row'] as $last_news_publication){ ?>
+<section class="news-individual">
+    <h3 class="title title--about title--about-cells title--about-cells-news">
+        НОВИНИ
+    </h3>
+    <div class="news-individual__item">
+        <div class="news-individual__container">
+            <div class="news-individual__date"><?=$last_news_publication['post_date']?></div>
+            <h3 class="news-individual__title"><?=$last_news_publication['h1']?></h3>
+            <p class="news-individual__info"><?=$last_news_publication['short_content']?></p>
+            <a class="news-individual__details" href="/shtab.php-academy.org/news/view/<?=$last_news_publication['id']?>">
+            Детальніше</a>
+        </div>
+        <div class="news-individual__photo">
+            <img src="img/news_images/<?=$last_news_publication['img']?>" alt="">
+        </div>
+    </div>
+
+</section>
+<?php } ?>
+<section id="news_content" class="news-blocks news-blocks--individual">
+    <div class="news-blocks__container newsContainer">
+            <?php foreach($data['rows'] as $news_publication){ ?>
+        <article class="news-item" id="post-" .="">
+            <img class="news-item__photo" src="img/news_images/<?=$news_publication['img']?>" alt="">
+            <div class="news-item__container">
+                <div class="news-item__date"><?=$news_publication['post_date']?></div>
+                <h4 class="news-item__title"><?=$news_publication['h1']?></h4>
+                <p class="news-item__info"><?=$news_publication['short_content']?></p>
+                <a class="news-item__details" href="/shtab.php-academy.org/news/view/<?=$news_publication['id']?>">Детальніше</a>
+            </div>
+        </article>
+        <?php } ?>
+    </div>
+
+<!--    <div class="load-more">-->
+    <form action="post">
+        <input name="load" id="show_more" count_show="6" count_add="3" type="button" value="Показать еще"/>
+    </form>
+<!--    </div>-->
+</section>
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+</script>
+
+<script src="lib/js/ajax.load_more.news.js"></script>

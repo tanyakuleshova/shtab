@@ -1,0 +1,38 @@
+<?php foreach($data['last_row'] as $last_investigations_publication){ ?>
+<section class="news-individual news-individual--investigation">
+    <h3 class="title title--about title--about-cells title--about-cells-investigation">
+        РОЗСЛІДУВАННЯ
+    </h3>
+    <div class="news-individual__item">
+        <div class="news-individual__container">
+            <div class="news-individual__date"><?=$last_investigations_publication['post_date']?></div>
+            <h3 class="news-individual__title"><?=$last_investigations_publication['h1']?></h3>
+            <p class="news-individual__info"><?=$last_investigations_publication['short-content']?></p>
+            <a href="/shtab.php-academy.org/investigations/view/<?=$last_investigations_publication['id']?>" class="news-individual__details">Детальніше</a>
+        </div>
+        <div class="news-individual__photo">
+            <img src="img/investigation_images/<?=$last_investigations_publication['img']?>" alt="">
+        </div>
+    </div>
+</section>
+<?php } ?>
+<section class="news-blocks news-blocks--individual">
+    <div class="news-blocks__container investigationContainer">
+        <?php foreach($data['rows'] as $investigations_publication){ ?>
+        <article class="news-item" id="post-" .="">
+            <img class="news-item__photo" src="img/investigation_images/<?=$investigations_publication['img']?>" alt="">
+            <div class="news-item__container">
+                <div class="news-item__date"><?=$investigations_publication['post_date']?></div>
+                <h4 class="news-item__title"><?=$investigations_publication['h1']?></h4>
+                <p class="news-item__info"><?=$investigations_publication['short-content']?></p>
+                <a href="/shtab.php-academy.org/investigations/view/<?=$investigations_publication['id']?>" class="news-item__details">Детальніше</a>
+            </div>
+        </article>
+        <?php } ?>
+    </div>
+    <div class="load-more load-more--investigation">
+            <span class="load-more__button load-more-js"">
+                БІЛЬШЕ РОЗСЛІДУВАНЬ
+            </span>
+    </div>
+</section>

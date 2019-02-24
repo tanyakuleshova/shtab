@@ -1,0 +1,125 @@
+<section class="banner banner--main">
+    <h1 class="banner__title">
+        КАРТА РЕМОНТІВ </h1>
+    <p class="banner__info">
+        Слідкуйте за виконанням обіцянок можновладців безпосередньо на мапі України та відстежуйте куди йдуть ваші
+        гроші </p>
+    <div class="banner__date">
+        <a href="#">01</a>
+        <span> / </span>
+        <a href="#">05</a>
+    </div>
+    <a href="https://map.shtab.net" class="btn btn--banner">
+        ПЕРЕЙТИ ДО КАРТИ </a>
+</section>
+<section class="btn-box btn-box--team">
+    <small class="btn-box__head">
+        Команда </small>
+    <h2 class="title title--btn-box-team">
+        ЗНАЙОМТЕСЬ
+        <br>З НАШОЮ КОМАНДОЮ
+    </h2>
+    <a href="/shtab.php-academy.org/about" class="btn btn--btn-box-team">
+        ПРО НАС </a>
+</section>
+<section class="news">
+    <div class="date-box date-box--news">
+        <?php foreach($data['last_news'] as $news_publication){ ?>
+        <h2 class="date-box__title">
+            ОСТАННІ НОВИНИ
+        </h2>
+        <div class="date-box__date">
+            <p>
+                <?=date('d', strtotime($news_publication['post_date']))?>
+            </p>
+            <p>
+                <?=date('F', strtotime($news_publication['post_date']))?>,
+                <?=date('y', strtotime($news_publication['post_date']))?>
+            </p>
+        </div>
+        <a href="/shtab.php-academy.org/news" class="btn btn--date-box btn--date-box-slider btn--date-box-slider-reverse">
+            БІЛЬШЕ НОВИН
+        </a>
+        <?php } ?>
+    </div>
+    <div class="news-slider-container">
+        <div class="flexslider">
+            <ul class="slides">
+                <?php foreach($data['all_news'] as $item){ ?>
+                <li>
+                    <div class="news-slider-content">
+                        <div class="news-slider-text">
+                            <small class="news-box__address">
+                                <?=$item['adress']?></small>
+                            <h3 class="news-box__title">
+                                <?=$item['h1']?>
+                            </h3>
+                            <p class="news-box__news">
+                                <?=$item['short_content']?>
+                            </p>
+                            <a href="" class="read-more">Детальніше</a>
+                        </div>
+                        <div class="news-slider-image">
+                            <?php 
+                            if($item['img'] != ''){ ?>
+                                <img src="img/news_images/<?=$item['img']?>">
+                                <?php } ?>
+                            
+                        </div>
+                    </div>
+                </li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="news news--investigation">
+        <div class="date-box date-box--news date-box--news-reverse">
+                <?php foreach($data['last_investigation'] as $investigation_publication){ ?>
+            <h2 class="date-box__title">
+	            РОЗСЛІДУВАННЯ            
+            </h2>
+            
+			
+            <div class="date-box__date">
+                <p><?=date('d', strtotime($investigation_publication['post_date']))?></p>
+                <p><?=date('F', strtotime($investigation_publication['post_date']))?>,
+                    <?=date('y', strtotime($investigation_publication['post_date']))?></p>
+            </div>
+
+                        <a href="/shtab.php-academy.org/investigations" class="btn btn--date-box btn--date-box-slider btn--date-box-slider-reverse">
+	            БІЛЬШЕ РОЗСЛІДУВАНЬ            
+            </a>
+            <?php } ?>
+        </div>      
+        <div class="investigation-slider-container">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <?php foreach($data['all_investigation'] as $item){ ?>
+                        <li>
+                            <div class="news-slider-content">
+                                <div class="news-slider-image">
+                                    <?php 
+                                    if($item['img'] != ''){ ?>
+                                        <img src="img/investigation_images/<?=$item['img']?>">
+                                    <?php } ?>
+                                </div>
+                                <div class="news-slider-text">
+                                    <small class="news-box__address">
+                                        <?=$item['adress']?></small>
+                                    <h3 class="news-box__title">
+                                        <?=$item['h1']?>
+                                    </h3>
+                                    <p class="news-box__news">
+                                        <?=$item['short-content']?>
+                                    </p>
+                                    <a href="" class="read-more">Детальніше</a>
+                                </div>
+                            </div>
+                        </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            </div>
+      
+    </section>
